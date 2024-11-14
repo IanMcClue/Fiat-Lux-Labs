@@ -90,14 +90,17 @@ const sortedPosts = posts
                             target="_blank"
                         >
                             {!!project.badgeContent && (
-                                <div class="badge-group inline-flex text-sm w-auto relative mb-0 m-6">
-                                    <div class="badge-group--container w-auto items-center rounded-full border border-neutral-300 bg-white px-1 py-[2px] font-medium text-primary-500 inline-flex">
-                                        <div class="badge-group--message px-2">
-                                            On Going
-                                        </div>
+                            <div class="badge-group inline-flex text-sm w-auto relative mb-0 m-6">
+                                <div class="badge-group--container w-auto items-center rounded-full border border-neutral-300 bg-white px-1 py-[2px] font-medium text-primary-500 inline-flex">
+                                    <div class="badge-group--message px-2">
+                                        On Going
+                                        {project.badgeContent && (
+                                            <div class="w-2 h-2 rounded-full bg-green-400 animate-flicker ml-2"></div>
+                                        )}
                                     </div>
                                 </div>
-                            )}
+                            </div>
+                        )}
                             <CardBody>
                                 <CardImage
                                     src={project.logo}
