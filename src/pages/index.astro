@@ -79,8 +79,16 @@ const sortedPosts = posts
                                 <div class="badge-group inline-flex text-sm w-auto relative mb-0 m-6">
                                     <div class="badge-group--container w-auto items-center rounded-full border border-neutral-300 bg-white px-1 py-[2px] font-medium text-primary-500 inline-flex">
                                         <div class="flex items-center gap-2 badge-group--message px-2">
-                                            On Going
-                                            <div class="w-2 h-2 rounded-full bg-green-400 animate-flicker" />
+                                            {project.badgeContent}
+                                            {project.badgeContent === "On Going" && (
+                                                <div class="w-2 h-2 rounded-full bg-green-400 animate-flicker" />
+                                            )}
+                                            {project.badgeContent === "Pending" && (
+                                                <div class="w-2 h-2 rounded-full bg-amber-400 animate-flicker" />
+                                            )}
+                                            {project.badgeContent === "Retired" && (
+                                                <div class="w-2 h-2 rounded-full bg-gray-400" />
+                                            )}
                                         </div>
                                     </div>
                                 </div>
