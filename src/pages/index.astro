@@ -72,49 +72,54 @@ const sortedPosts = posts
 </SectionContainer>
 
         <!-- Header/Hero Section -->
-        <style>
-@keyframes flicker {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-
-.animate-flicker {
-  animation: flicker 1.5s infinite;
-}
-</style>
-
-<div class="main-wrapper wrap-sm grid gap-16 px-8 md:gap-24 lg:gap-32 mx-auto">
-    <SectionContainer class="projects--container">
-        <h2 class="font-medium text-h4 text-neutral-500 my-4 leading-8 tracking-tighter">
-            Projects
-        </h2>
-        <CardGroup class="grid scroll-m-24 gap-5 grid-cols-1 md:grid-cols-2 w-full">
-            {
-                projectData.map((project) => (
-                    <Card key={project.id} className="col-span-1" link={project.link} target="_blank">
-                        {!!project.badgeContent && (
-                            <div class="badge-group inline-flex text-sm w-auto relative mb-0 m-6">
-                                <div class="badge-group--container w-auto items-center rounded-full border border-neutral-300 bg-white px-1 py-[2px] font-medium text-primary-500 inline-flex">
-                                    <div class="w-2 h-2 rounded-full bg-green-400 animate-flicker mr-2"></div>
-                                    <div class="badge-group--message px-2">On Going</div>
+        <SectionContainer class="projects--container">
+            <h2
+                class="font-medium text-h4 text-neutral-500 my-4 leading-8 tracking-tighter"
+            >
+                Projects
+            </h2>
+            <CardGroup
+                class="grid scroll-m-24 gap-5 grid-cols-1 md:grid-cols-2 w-full"
+            >
+                {
+                    projectData.map((project) => (
+                        <Card
+                            key={project.id}
+                            className="col-span-1"
+                            link={project.link}
+                            target="_blank"
+                        >
+                            {!!project.badgeContent && (
+                                <div class="badge-group inline-flex text-sm w-auto relative mb-0 m-6">
+                                    <div class="badge-group--container w-auto items-center rounded-full border border-neutral-300 bg-white px-1 py-[2px] font-medium text-primary-500 inline-flex">
+                                        <div class="badge-group--message px-2">
+                                            On Going
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        )}
-                        <CardBody>
-                            <CardImage src={project.logo} alt="Articoole Banner" imageClass="absolute top-0 right-0 m-6 p-4 bg-white rounded-3xl" width={80} height={80} />
-                            <div class="card-content absolute bottom-8 left-6 right-6">
-                                <CardHeader class="">{project.title}</CardHeader>
-                                <div class="content break-words text-3xl font-medium leading-10 tracking-tight lg:tracking-tighter text-neutral-500 ">
-                                    <p>{project.shortExcerpt}</p>
+                            )}
+                            <CardBody>
+                                <CardImage
+                                    src={project.logo}
+                                    alt="Articoole Banner"
+                                    imageClass="absolute top-0 right-0 m-6 p-4 bg-white rounded-3xl"
+                                    width={80}
+                                    height={80}
+                                />
+                                <div class="card-content absolute bottom-8 left-6 right-6">
+                                    <CardHeader class="">
+                                        {project.title}
+                                    </CardHeader>
+                                    <div class="content break-words  text-3xl font-medium leading-10 tracking-tight lg:tracking-tighter text-neutral-500 ">
+                                        <p>{project.shortExcerpt}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </CardBody>
-                    </Card>
-                ))
-            }
-        </CardGroup>
-    </SectionContainer>
-</div>
+                            </CardBody>
+                        </Card>
+                    ))
+                }
+            </CardGroup>
+        </SectionContainer>
         <!--  Projects Container -->
         <SectionContainer class="blogs--container">
             <div class="flex flex-row my-4 items-center text-neutral-500">
